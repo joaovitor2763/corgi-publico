@@ -1,17 +1,26 @@
-# Contributing to Corgi
+# Contribuições
 
-Corgi (derived from [OpenMuse](https://github.com/CopilotKit/openmuse)) is licensed for noncommercial use (PolyForm Noncommercial 1.0.0). Contributions should make delegated work reliable and visible, with honest connector status, reviewed writes and useful native interactions.
+**Não estamos aceitando pull requests.** Este repositório é compartilhado como uma contribuição, no
+estado em que se encontra ("as is"). Não há intenção nem compromisso de oferecer suporte, responder
+dúvidas, corrigir problemas ou fazer melhorias; qualquer atualização acontece apenas por nossa própria
+liberalidade, quando e se quisermos.
 
-## Local development
+Você é bem-vindo para usar, estudar e adaptar o Corgi para uso não comercial, dentro da
+[licença](LICENSE), no seu próprio fork.
 
-1. Fork and clone the repository. Use Node 24 LTS and pnpm 11.19.0.
-2. Run `pnpm install --frozen-lockfile`, then `pnpm corgi:setup` (creates `.env`).
-3. Run `pnpm dev` and, in another terminal, `pnpm dev:web`.
-4. Use the fictional sample workspace for development and recordings. See [native setup](apps/mobile/README.md) for simulator/emulator builds.
+*We are not accepting pull requests. This repository is shared as a contribution, as is, with no
+intention or commitment to provide support, fixes or improvements; any update happens solely at our
+own discretion. You are welcome to use and adapt it for noncommercial purposes under the
+[license](LICENSE), in your own fork.*
 
-Never commit `.env`, `.openmuse`, browser profiles, credentials, or personal documents. Live provider testing is optional for ordinary contributions; state exactly which paths you tested.
+## Se você for adaptar no seu fork
 
-## Checks before a pull request
+1. Node 24 LTS e pnpm 11.19.0.
+2. `pnpm install --frozen-lockfile`, depois `pnpm corgi:setup` (cria o `.env`).
+3. `pnpm dev` e, em outro terminal, `pnpm dev:web` (e `pnpm dev:browser` para o navegador do assistente).
+4. Nunca commite `.env`, `.openmuse`, perfis do navegador, credenciais ou documentos pessoais.
+
+Antes de publicar suas mudanças:
 
 ```sh
 pnpm lint
@@ -19,36 +28,8 @@ pnpm typecheck
 pnpm test
 pnpm build:server
 pnpm build:web
-pnpm build:ios
-pnpm build:android
-pnpm --dir apps/worker typecheck
+(cd apps/worker && npx tsc --noEmit)
 ```
 
-For browser changes:
-
-```sh
-pnpm --dir apps/worker exec playwright install chromium
-pnpm test:browser
-# With Docker available:
-pnpm --dir apps/worker test:docker
-```
-
-Browser integration checks use public fixture websites and disposable profiles. They never use your saved browser sessions. CI runs lint, types, tests, platform exports, Chromium lifecycle, and the disposable browser-container suite.
-
-## Change guidelines
-
-- Keep CopilotKit/AG-UI transport, the native UI, and server-owned task execution separate.
-- Show the real tool result or failure. Do not replace a failed connector with sample success.
-- Treat website, mail, and PDF text as data. It cannot grant tool permissions or approve a write.
-- Keep sends and calendar mutations behind persisted, versioned action reviews. Preserve uncertain provider outcomes; do not retry a possibly completed write.
-- Add regression coverage for behavior changes. Test outcomes such as a task surviving restart, not just function calls.
-- Check iOS/Android layout when changing shared React Native components. Platform exports validate bundles; they do not prove a native binary works.
-- Document required credentials and unsupported capabilities when adding a connector.
-
-## Pull requests and issues
-
-Open an issue for substantial architecture or connector changes so contributors can agree on scope. Small fixes can go directly to a pull request.
-
-Describe the problem, resulting behavior, and verification. Include a screenshot or short recording for UI changes and note any untested provider/platform path. Do not paste private account data or tokens in logs. Security reports follow [SECURITY.md](SECURITY.md).
-
-Contributions are accepted under the same terms as the project ([LICENSE](LICENSE)); you confirm you may license them that way.
+Os testes usam só dados locais: sem rede, sem contas reais. Cada pasta importante tem um `AGENTS.md`
+com as regras dela; comece pelo [AGENTS.md](AGENTS.md) da raiz.

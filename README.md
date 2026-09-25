@@ -118,6 +118,13 @@ projeto.
 - [pi-agent-core / pi-ai](https://www.npmjs.com/package/@earendil-works/pi-ai), Composio, Apify,
   Playwright e Expo.
 
+## Contribuições e suporte
+
+**Não aceitamos pull requests.** O Corgi é compartilhado como uma contribuição, no estado em que se
+encontra: não há intenção de oferecer suporte, correções ou melhorias, que só acontecem por nossa
+própria liberalidade. Fique à vontade para adaptar no seu fork, dentro da licença. Veja
+[CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Licença
 
 **Uso não comercial.** O Corgi é licenciado sob a
