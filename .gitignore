@@ -1,0 +1,33 @@
+node_modules/
+.expo/
+dist/
+build/
+.env
+.env.local
+.env.*.local
+.openmuse/
+apps/mobile/ios/
+apps/mobile/android/
+.DS_Store
+*.tsbuildinfo
+artifacts/
+
+# Local mascot test models (not the shipped asset)
+apps/mobile/public/dev/
+
+# Personal AI tooling (not part of the app)
+.claude/settings.local.json
+.agents/
+/skills/
+skills-lock.json
+.env.bak*
+apps/worker/.scenario.mjs
+.claude/worktrees/
+
+# Local agent tooling (per machine)
+.claude/skills/
+.agents/
+Nota_tecnica.pdf
+*.pdf
+!apps/**/*.pdf
+!tests/**/*.pdf

@@ -1,0 +1,15 @@
+packages:
+  - apps/mobile
+  - apps/worker
+allowBuilds:
+  esbuild: true
+  '@biomejs/biome': true
+  '@scarf/scarf': false
+  '@google/genai': false
+  protobufjs: false
+minimumReleaseAgeExclude:
+  - '@earendil-works/chord@0.87.1'
+  - '@earendil-works/pi-agent-core@0.87.1'
+  - '@earendil-works/pi-ai@0.87.1'
+  - '@earendil-works/pi-telemetry@0.87.1'
+  - '@composio/core@0.20.0'

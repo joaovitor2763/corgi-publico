@@ -1,0 +1,31 @@
+# Corgi chart defaults: made to be read on a phone.
+figure.figsize: 7, 8.75
+figure.dpi: 100
+savefig.dpi: 200
+savefig.bbox: tight
+savefig.facecolor: white
+font.size: 15
+axes.titlesize: 19
+axes.titleweight: bold
+axes.titlelocation: left
+axes.titlepad: 16
+axes.labelsize: 14
+axes.labelcolor: 555E63
+axes.edgecolor: CCD2D6
+axes.spines.top: False
+axes.spines.right: False
+axes.grid: True
+axes.grid.axis: y
+axes.axisbelow: True
+axes.formatter.useoffset: False
+axes.formatter.limits: -9, 12
+axes.prop_cycle: cycler('color', ['2F6FDE', 'F2A93B', '3E8E5E', 'D1495B', '7E57C2', '00A0B0', '8C6D46'])
+grid.color: E7EBEE
+grid.linewidth: 1
+xtick.color: 555E63
+ytick.color: 555E63
+xtick.labelsize: 13
+ytick.labelsize: 13
+legend.frameon: False
+legend.fontsize: 13
+lines.linewidth: 2.5

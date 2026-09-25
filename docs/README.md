@@ -1,0 +1,15 @@
+# Corgi documentation
+
+- [Quick start and architecture](../README.md)
+- [Deploy: VPS or Mac mini, reached over Tailscale](DEPLOY.md)
+- [Models: automatic pick and how much it thinks](MODELS.md)
+- [Background tasks: the flow](TASKS.md)
+- [Memory: what Corgi knows, why, and how it gets better](MEMORY.md)
+- [Helpers: small assistants Corgi calls](HELPERS.md)
+- [Notifications on the phone (Web Push)](NOTIFICATIONS.md)
+- [Apify: ready-made scrapers with your API key](APIFY.md)
+- [Interaction design and conversation behavior](EXPERIENCE.md)
+- [Linux computer, terminal, and workspace files](COMPUTER.md)
+- [Browser worker, API, persistence, and network boundary](../apps/worker/README.md)
+- [Native iOS / Android / web setup](../apps/mobile/README.md)
+- [Roadmap](../ROADMAP.md) · [Contributing](../CONTRIBUTING.md) · [Security](../SECURITY.md)

@@ -1,0 +1,49 @@
+import assert from "node:assert/strict";
+import { mkdtemp, rm } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { test } from "node:test";
+import { createPool, createStore } from "../apps/server/src/platform/db.ts";
+import { backgroundFailure } from "../apps/server/src/platform/log.ts";
+
+test("fresh nested data directory starts and survives a database restart", async () => {
+  const root = await mkdtemp(join(tmpdir(), "openmuse-db-"));
+  try {
+    const options = { dataDir: join(root, "new-install", "postgres") };
+    const first = await createStore(options);
+    await first.put("owner", "actions", { id: "action1", status: "executing" });
+    await first.close();
+    const second = await createStore(options);
+    await second.recoverInterruptedActions();
+    assert.equal((await second.get("owner", "actions", "action1"))?.status, "outcome_unknown");
+    await second.close();
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test("idle Postgres client errors are logged instead of crashing the process", async (t) => {
+  const logged = t.mock.method(console, "error", () => {});
+  const pool = createPool("postgres://127.0.0.1:1/openmuse");
+  try {
+    assert.doesNotThrow(() => pool.emit("error", new Error("terminating connection")));
+    assert.equal(logged.mock.callCount(), 1);
+  } finally {
+    await pool.end();
+  }
+});
+
+test("background errors keep a safe system code and never the message", (t) => {
+  const logged = t.mock.method(console, "error", () => {});
+  backgroundFailure(
+    "sync",
+    Object.assign(new Error("Bearer secret-token"), { code: "ECONNRESET" }),
+  );
+  backgroundFailure("sync", Object.assign(new Error("x"), { code: "has spaces and secrets" }));
+  const [first, second] = logged.mock.calls.map(
+    (call) => call.arguments[0] as Record<string, unknown>,
+  );
+  assert.equal(first?.code, "ECONNRESET");
+  assert.doesNotMatch(JSON.stringify(first), /secret-token/);
+  assert.equal(second?.code, undefined);
+});

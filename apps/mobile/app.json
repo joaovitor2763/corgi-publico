@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "Corgi",
+    "slug": "corgi",
+    "scheme": "openmuse",
+    "version": "0.1.0",
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.corgi.assistant"
+    },
+    "android": {
+      "package": "app.corgi.assistant",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFF4E6"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "name": "Corgi",
+      "shortName": "Corgi",
+      "themeColor": "#FFFFFF",
+      "backgroundColor": "#FFFFFF",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-document-picker",
+      "@config-plugins/react-native-blob-util",
+      "@config-plugins/react-native-pdf",
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "O Corgi usa suas fotos só quando você escolhe uma para enviar na conversa.",
+          "cameraPermission": "O Corgi usa a câmera só quando você tira uma foto para enviar na conversa."
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "O Corgi usa o microfone só enquanto você grava uma mensagem por voz."
+        }
+      ]
+    ],
+    "icon": "./assets/icon.png"
+  }
+}
