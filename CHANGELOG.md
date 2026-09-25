@@ -2,6 +2,9 @@
 
 ## Corgi 0.2.0 — 2026-09-25
 
+Licensed for noncommercial use (PolyForm Noncommercial 1.0.0); the parts that come from OpenMuse
+remain under MIT (LICENSE-OPENMUSE).
+
 First public Corgi release, derived from OpenMuse 0.1.0-alpha. Highlights: Pi/Impossibl models with
 an automatic pick, Composio apps with per-app permissions, Apify, a browser navigator with private
 sign-in and guarded checkout, a trust guard, tasks as side chats with checklists and notes,

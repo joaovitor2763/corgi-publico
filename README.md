@@ -1,10 +1,31 @@
+<div align="center">
+
+<img src="docs/screenshots/regi.jpg" width="140" alt="A Regi, a corgi mascote do Corgi" />
+
 # Corgi 🐾
 
 **Um assistente executivo pessoal que você hospeda: conversa, usa seus apps, navega por você e
 continua o trabalho em segundo plano. Em português, do celular ou do computador.**
 
 *A self-hosted personal executive assistant, Brazilian Portuguese first. Each person runs their own
-server with their own keys.*
+server with their own keys. Free for noncommercial use.*
+
+</div>
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/chat.jpg" width="240" alt="Chat mostrando a agenda do dia" /><br/><sub>Sua agenda, direto no chat</sub></td>
+    <td align="center"><img src="docs/screenshots/chat-flights.jpg" width="240" alt="Comparação de voos em tabela" /><br/><sub>Pesquisa e recomenda</sub></td>
+    <td align="center"><img src="docs/screenshots/activity.jpg" width="240" alt="Atividade com tarefas e ideias" /><br/><sub>Trabalho em segundo plano</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/helpers-open.jpg" width="240" alt="Ajudantes com o último achado de cada um" /><br/><sub>Ajudantes com missão própria</sub></td>
+    <td align="center"><img src="docs/screenshots/helper-chat.jpg" width="240" alt="Conversa com o ajudante Radar" /><br/><sub>O Radar avisa só o que importa</sub></td>
+    <td align="center"><img src="docs/screenshots/memory-style.jpg" width="240" alt="Memória: como te atendo" /><br/><sub>Memória que aprende seu jeito</sub></td>
+  </tr>
+</table>
+
+<sub>Telas reais do app, com uma pessoa e dados fictícios.</sub>
 
 > **Derivado do [OpenMuse](https://github.com/CopilotKit/openmuse)**, criado pela
 > [CopilotKit](https://github.com/CopilotKit) sob licença MIT. O Corgi começou como um fork do
@@ -99,5 +120,10 @@ projeto.
 
 ## Licença
 
-MIT — veja [LICENSE](LICENSE). O trabalho original do OpenMuse mantém o aviso de copyright dos seus
-autores.
+**Uso não comercial.** O Corgi é licenciado sob a
+[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0): você pode
+usar, estudar, modificar e compartilhar para fins pessoais e não comerciais (e organizações sem fins
+lucrativos, pesquisa e educação). Uso comercial não é permitido. Veja [LICENSE](LICENSE).
+
+As partes que vêm do OpenMuse continuam disponíveis sob a licença MIT original, com o aviso de
+copyright dos seus autores: [LICENSE-OPENMUSE](LICENSE-OPENMUSE).
